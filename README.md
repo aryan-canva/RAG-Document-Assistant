@@ -17,12 +17,7 @@ If the answer isn't supported by the retrieved text, the assistant refuses inste
 ## How it works
 
 ```
-PDF ──► PyPDFLoader ──► Text splitter ──► MiniLM embeddings ──► Chroma
-                                                                   │
-Question ──► embed ──► MMR retrieval (top chunks) ◄────────────────┘
-                              │
-                              ▼
-              Guardrailed prompt + context ──► Gemini ──► Answer
+![RAG pipeline diagram](architecture.png)
 ```
 
 1. **Index (once per file):** load → split → embed → store in a uniquely named Chroma collection.
