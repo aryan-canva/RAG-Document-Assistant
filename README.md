@@ -16,9 +16,9 @@ If the answer isn't supported by the retrieved text, the assistant refuses inste
 
 ## How it works
 
-```
+
 ![RAG pipeline diagram](architecture.png)
-```
+
 
 1. **Index (once per file):** load → split → embed → store in a uniquely named Chroma collection.
 2. **Query (every question):** retrieve the most relevant, diverse chunks → build a strict prompt → call Gemini → display the answer and the supporting chunks.
